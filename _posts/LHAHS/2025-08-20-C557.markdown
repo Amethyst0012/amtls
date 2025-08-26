@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: post
 title:  "LHAHS Chapter 557"
 date:   2025-08-20 19:51:53 +0800
 categories: LHAHS
