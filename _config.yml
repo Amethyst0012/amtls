@@ -19,11 +19,10 @@
 # in the templates via {{ site.myvariable }}.
 
 title: AmeworldTL
-# email: --@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Just a english fan translation of novels I find interesting.
 baseurl: "AmTLs" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://amethyst0012.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: aaaa
 github_username:  Amethyst0012
 markdown: kramdown
@@ -32,7 +31,7 @@ kramdown:
   parse_block_html: true 
   smart_quotes: ["apos", "apos", "quot", "quot"]
 permalink: /:categories/:title
-logo: /assets/images/logo.jpg
+logo: /web-app-manifest-512x512
 pagination: 
   enable: true
   per_page: 20
