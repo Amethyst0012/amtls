@@ -1,0 +1,138 @@
+/* this css for header, home, default and footer */
+
+
+.site-header {
+  border-top: 5px solid $border-color-03;
+  border-bottom: 1px solid $border-color-01;
+  min-height: $spacing-unit * 1.865;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  background-color: #4e2774;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+.home {
+  background-color: #121212;
+}
+
+.page-content {
+  background-color: #121212;
+  color: white;
+}
+
+.site-footer {
+  background-color: #121212;
+}
+
+.night-mode {
+	background-color: #272727;
+	color: white;
+}
+
+.night-mode-quotes {
+	color: white;
+}
+
+.day-mode {
+	background-color: #ffffff;
+	color: #1b1b1b;
+}
+
+.day-mode-quotes {
+	color: #8095fb;
+}
+
+h1, h2 {
+	color: white;
+  text-align: center;
+}
+
+h3, h4, h5, h6 {
+  color: white;
+}
+
+a:link {
+  color: #9966cc;
+}
+a:visited {
+  color: darkgray;
+}
+a:hover {
+  color: rgb(107, 78, 134);
+}
+a:active {
+  color: #9C84A2;
+} 
+
+ul.toc {
+  list-style: none;
+  padding-left: 0;
+	margin-left: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid $border-color-01;
+  padding-left: $spacing-unit / 2;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0px;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+/*
+
+.footnote{
+	color: bla;
+}
+
+*/
+
+
+/* Sup text */
+p input + label {
+  font: 0.7em / 1 system-ui, sans-serif;
+  vertical-align: super;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+p input + label:before {
+  content: "";
+}
+
+p input + label:after {
+  content: "";
+}
+
+p input + label:hover {
+  color: #838374;
+}
+
+/* Footnote text */
+
+small {
+  color: #838374;
+  font-size: 0.875em;
+}
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+p input:checked + label + small {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}

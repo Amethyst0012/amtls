@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+    {% include chapter_tagging.html %}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+
+        {% assign output = content 
+      | replace: '{bl}', '<img src="/assets/images/bl.png" alt="bl">'
+      | replace: '<div class="footnotes" role="doc-endnotes">', '<hr><h3>Footnotes:</h3><div class="footnotes" role="doc-endnotes">'
+			| replace: '<blockquote>', '<blockquote class="night-mode-quotes">'
+			| replace: '@[', '<span class="night-mode-quotes">'
+			| replace: ']@', '</span>'    
+    %}
+      
+    {{output}}
+
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    {%- include sub-footer.html -%}
+
+  </body>
+
+</html>

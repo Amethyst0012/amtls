@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<link href="/css/override.css" rel="stylesheet" type="text/css">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline"> {{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">	
+<div style="font-size: 16px;" id="content">
+    {% include JS_button.html %}
+    <p class="ameth">Editor : Amethyst00 </p>
+    <br>
+    <br>
+
+		{{ content }}
+</div>
+
+<hr>
+		{% include navlinks_lhahs.html %}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+{% include giscus_comments.html %}
