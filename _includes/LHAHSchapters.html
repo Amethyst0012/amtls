@@ -2,7 +2,7 @@
  {% for post in site.posts reversed %}
 	 {% if post.tags contains 'lhahs' %}
 	 <li>
-		 <a href="{{ post.url }}">
+		 <a href="{{ post.url | relative_url }}">
 		 {{ post.title }}
 		 </a>
 	 </li>
