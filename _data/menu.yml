@@ -5,8 +5,8 @@
       weight: 3
       subsubfolderitems:
         - name: "The Legendary Hero is an Academy Honors Student"
-          url: "/LHAHS/"
+          url: "{{ site.baseurl }}/LHAHS/"
           weight: 2
     - name: "About"
-      url: "/about.html"
+      url: "{{ site.baseurl }}/about.html"
       weight: 3
