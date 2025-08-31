@@ -7,4 +7,3 @@ pagination:
 
 ---
 
-<h1> Latest Updates </h1>

@@ -12,7 +12,7 @@
       <div class="wrapper">
 
         {% assign output = content 
-      | replace: '{bl}', '<img src="https://amethyst0012.github.io/AmTLs/assets/images/bl.png" alt="bl">'
+      | replace: '{bl}', '<img class="bl" src="https://amethyst0012.github.io/AmTLs/assets/images/bl.png" alt="bl">'
       | replace: '<div class="footnotes" role="doc-endnotes">', '<hr><h3>Footnotes:</h3><div class="footnotes" role="doc-endnotes">'
 			| replace: '<blockquote>', '<blockquote class="night-mode-quotes">'
 			| replace: '@[', '<span class="night-mode-quotes">'
@@ -24,6 +24,7 @@
       </div>
     </main>
 
+    <br/>
     {%- include footer.html -%}
 
     {%- include sub-footer.html -%}

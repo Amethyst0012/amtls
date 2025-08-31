@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="logo-section">
+    <div class="series-logo" >
+      <img src="{{ '/assets/images/LHAHSHD.jpg' | relative_url }}">
+    </div>
+  </div>
+    <div class="chapters-section">
+      <div class="series-title">The Legendary Hero is an Academy Honors Student</div>
+        <div class="chapters-container">
+            {% comment %}
+            Filter posts by category 'LHAHS' and tag 'lhahs', then sort by date (newest first)
+            {% endcomment %}
+
+            {% assign lhahs_posts = site.posts | where: "categories", "LHAHS" | sort: "date" | reverse %}
+            {% assign lhahs_tagged_posts = lhahs_posts | where_exp: "post", "post.tags contains 'lhahs'" %}
+                
+            {% if lhahs_tagged_posts.size > 0 %}
+              {% for post in lhahs_tagged_posts limit: 8 %}
+                {% assign chapter_number = 11 | minus: forloop.index %}
+                {% assign is_latest = forloop.first %}
+                        
+                <a href="{{ post.url | relative_url }}" class="chapter{% if is_latest %} latest{% endif %}">
+                  <div class="chapter-info">
+                    <span class="chapter-title">{{ post.title | truncate: 30 }}</span>
+                    <span class="chapter-date">{{ post.date | date: "%d %b %Y" }}</span>
+                  </div>
+                </a>
+              {% endfor %}
+            {% endif %}
+        </div>
+  </div>
+</div>
