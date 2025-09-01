@@ -1,6 +1,7 @@
 ---
 layout: pageLHAHS
 title: The Legendary Hero is an Academy Honors Student
+comments: true
 ---
 
 Back in the Age of Despair, Kyle defeated Erebos, the genesis of evil. 5000 years later, he reincarnates as Leo with the memories of his past life intact.

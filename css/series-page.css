@@ -258,34 +258,86 @@
     content: " ▼";
 }
 
+/* ✅ Tablet (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content-area {
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .series-image {
+    width: 60%;
+    max-width: 320px;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .series-description {
+    font-size: 1.1rem;
+    padding: 20px;
+    max-height: 240px;
+  }
+
+  .chapters-item {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
-    .chapter-container {
-        padding: 10px;
-    }
+  .chapter-container {
+    padding: 10px;
+  }
     
-    .chaptersort-section {
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-    }
+  .chaptersort-section {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
     
-    .sort-buttons {
-        align-self: flex-end;
-    }
+  .sort-buttons {
+    align-self: flex-end;
+  }
     
-    .chapters-item {
-        padding: 12px 15px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
+  .chapters-item {
+    padding: 12px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
     
-    .chapters-date {
-        margin-left: 0;
-    }
+  .chapters-date {
+    margin-left: 0;
+  }
     
-    .chapter-release {
-        font-size: 14px;
-    }
+  .chapter-release {
+    font-size: 14px;
+  }
+  
+  .series-banner,
+  .img-banner {
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  .series-description {
+    font-size: 1rem;
+    padding: 15px;
+    max-height: 200px;
+  }
+
+  .chapters-item {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .chapters-title {
+    font-size: 15px;
+  }
+
+  .chapter-release {
+    font-size: 14px;
+  }
 }
