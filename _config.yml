@@ -31,7 +31,7 @@ kramdown:
   parse_block_html: true 
   smart_quotes: ["apos", "apos", "quot", "quot"]
 permalink: /:categories/:title
-logo: /web-app-manifest-512x512
+logo: /android-chrome-512x512
 pagination: 
   enable: true
   per_page: 20
