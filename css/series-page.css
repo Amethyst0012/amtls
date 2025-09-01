@@ -1,0 +1,291 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid #444;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.series-banner {
+  width: 100%;
+  max-height: 250px;
+  border-bottom: 1px solid #444;
+}
+
+.img-banner {
+  width: 100%;
+  max-height: 250px;
+}
+
+.content-area {
+  background: #1a1a1a;
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+.series-image {
+  flex-shrink: 0;
+  width: 280px;
+  height: 350px;
+  background: #000;
+  border: 2px solid #555;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.series-cover {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+.series-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.novel-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.series-description {
+  background: #1a1a1a;
+  border-left: 20px;
+  border-left-color: #777;
+  border-radius: 10px;
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: #ccc;
+  overflow-y: auto;
+  max-height: 280px; 
+}
+
+.series-description::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 2px;
+}
+
+.series-description::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.series-description::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 4px;
+}
+
+.series-description::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* For Firefox */
+.series-description {
+  scrollbar-width: thin;
+  scrollbar-color: #777 transparent;
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    flex-direction: column;
+    padding: 20px;
+  }
+            
+  .series-image {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+
+
+/* for series chapter in series page */
+.chapter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #444;
+}
+
+.chaptersort-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.chapter-release {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.sort-btn {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.sort-btn:hover {
+    background-color: #444;
+}
+
+.sort-btn.active {
+    background-color: #4e2774;
+    border-color: #4e2774;
+}
+
+.chapters-list {
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.chapters-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
+}
+
+.chapters-item:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.chapters-item:last-child {
+    border-bottom: none;
+}
+
+.chapters-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.chapters-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.chapters-date {
+    color: #888;
+    font-size: 12px;
+    font-style: italic;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.hidden-chapters .chapters-item {
+    display: none;
+}
+
+.hidden-chapters.show .chapters-item {
+    display: flex;
+}
+
+.show-more-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.show-more-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    color: #fff;
+}
+
+.show-more-btn.expanded::after {
+    content: " ▲";
+}
+
+.show-more-btn:not(.expanded)::after {
+    content: " ▼";
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .chapter-container {
+        padding: 10px;
+    }
+    
+    .chaptersort-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .sort-buttons {
+        align-self: flex-end;
+    }
+    
+    .chapters-item {
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .chapters-date {
+        margin-left: 0;
+    }
+    
+    .chapter-release {
+        font-size: 14px;
+    }
+}

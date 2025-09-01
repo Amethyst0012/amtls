@@ -5,8 +5,8 @@
       weight: 3
       subsubfolderitems:
         - name: "The Legendary Hero is an Academy Honors Student"
-          url: "https://amethyst0012.github.io/AmTLs/LHAHS/"
+          url: "/AmTLs/LHAHS/"
           weight: 2
     - name: "About"
-      url: "https://amethyst0012.github.io/AmTLs/about.html"
+      url: "/AmTLs/about.html"
       weight: 3

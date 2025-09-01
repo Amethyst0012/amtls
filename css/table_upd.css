@@ -4,13 +4,14 @@
   border-radius: 8px 0px 0px 8px !important;
 }
         
-.container {
+.table-container {
   background-color: black;
   border: 3px solid whitesmoke;
   display: flex;
   width: 800px;
   height: 428px;
   border-radius: 8px;
+  margin-left: 300px;
 }
         
 .logo-section {
@@ -48,7 +49,7 @@
      
 .chapter-info {
   flex: 1;
-  padding: 7.2px 20px;
+  padding: 7.15px 20px;
   border-bottom: 1px solid whitesmoke;
   display: flex;
   justify-content: space-between;
@@ -71,8 +72,6 @@
   text-transform: capitalize;
   font-weight: bold;
 }
-
-
 
 .chapter-date {
   font-size: 12px;

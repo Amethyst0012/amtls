@@ -1,0 +1,70 @@
+{% include chapter_tagging.html %}
+{% assign start = false %}
+{% for post in site.posts %}	
+	{% if start == true and post.tags contains 'lhahs' %}
+		{% assign prevChap = post %}
+		{% break %}
+	{% endif %}			
+	{% if post.url == page.url %}
+		{% assign start = true %}
+	{% endif %}				
+{% endfor %}
+{% assign stop = false %}
+{% for post in site.posts reversed %}	
+	{% if stop == true and post.tags contains 'lhahs' %}
+		{% assign nextChap = post %}
+		{% break %}
+	{% endif %}			
+	{% if post.url == page.url %}
+		{% assign stop = true %}
+	{% endif %}				
+{% endfor %}
+
+<div class="chapter-container">
+    <div class="chaptersort-section">
+      <h2 class="chapter-release"> CHAPTER </h2>
+       <div class="sort-buttons">
+          <button id="newBtn" class="sort-btn active">Newest</button>
+          <button id="oldBtn" class="sort-btn">Oldest</button>
+      </div>
+    </div>
+
+    <div class="chapters-list" id="chaptersList">
+      {% assign lhahs_posts = site.posts | where: 'tags', 'lhahs' | sort: 'date' | reverse %}
+      {% for post in lhahs_posts limit: 9 %}
+      <a href="{{ post.url | relative_url }}">
+        <div class="chapters-item" data-date="{{ post.date | date: '%Y%m%d' }}">
+          <div class="chapters-info">
+            <span class="chapters-title">{{ post.title }}</span>
+          </div>
+          <div class="chapters-date">
+            {{ post.date | date: "%d %B, %Y" }}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+        
+      {% if lhahs_posts.size > 9 %}
+        <div class="hidden-chapters">
+          {% for post in lhahs_posts offset: 9 %}
+          <a href="{{ post.url | relative_url }}">
+            <div class="chapters-item" data-date="{{ post.date | date: '%Y%m%d' }}">
+              <div class="chapters-info">
+                <span class="chapters-title">{{ post.title }}</span>
+              </div>
+              <div class="chapters-date">
+                {{ post.date | date: "%d %B, %Y" }}
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if lhahs_posts.size > 9 %}
+    <div class="show-more-section">
+        <button id="showMoreBtn" class="show-more-btn">Show more</button>
+    </div>
+    {% endif %}
+</div>
