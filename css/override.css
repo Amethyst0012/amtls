@@ -64,3 +64,52 @@ hr {
     display: block;
 	margin: 0 auto;
 }
+
+/* ✅ Tablet (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .post_navi {
+    gap: 15px;
+  }
+
+  .post_navi .post_navi-item {
+    padding: 0 1.5em;
+    font-size: 0.95em;
+  }
+
+  .post_navi .post_navi-arrow {
+    font-size: 2em;
+  }
+}
+
+/* ✅ Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .post_navi {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .post_navi .post_navi-item {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.9em;
+  }
+
+  .post_navi .post_navi-arrow {
+    position: static;
+    transform: none;
+    font-size: 1.8em;
+    opacity: 0.4;
+    margin-top: 5px;
+  }
+
+  .centersel {
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .cmb {
+    width: 90%;
+  }
+}
