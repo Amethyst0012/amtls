@@ -2,25 +2,27 @@
 layout: default
 ---
 <link href="{{ '/css/override.css' | relative_url }}" rel="stylesheet" type="text/css">
+<script src="{{ '/js/centercel_cmb.js' | relative_url }}"></script>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline"> {{ page.title | escape }}</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">	
-<div style="font-size: 16px;" id="content">
-    {% include JS_button.html %}
-    <p class="ameth">Editor : Amethyst00 </p>
+  <div id="content" class="post-content e-content" itemprop="articleBody">
+    <div class="post-controls">
+      <p class="ameth">Editor : Amethyst00 </p>
+      {% include JS_button.html %}
+    </div>
+    <hr> 
     <br>
     <br>
 
 		{{ content }}
-</div>
 
-<hr>
-		{% include LH-navlinks.html %}
   </div>
+
+  {% include LH-navlinks.html %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

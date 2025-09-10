@@ -9,7 +9,11 @@
     {% include chapter_tagging.html %}
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+      {% if page.collection == "posts" or page.layout == "post" %}
+        <div class="wrapper night-mode">
+      {% else %}
+        <div class="wrapper">
+      {% endif %}
 
         {% assign output = content 
       | replace: '{bl}', '<img class="bl" src="https://amethyst0012.github.io/AmTLs/assets/images/bl.png" alt="bl">'

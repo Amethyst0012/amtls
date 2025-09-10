@@ -1,0 +1,71 @@
+/* New container to align editor text and buttons */
+.post-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Align items to the top */
+  margin-bottom: 1em;
+}
+
+/* Remove margin from the editor paragraph */
+.post-controls .ameth {
+  margin: 0;
+  padding-top: 8px;
+  /* Align with top of buttons */
+}
+
+/* Container for the button groups */
+.js-button-container {
+  display: flex;
+  flex-direction: column;
+  /* Stack button groups vertically */
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.js-button-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Hide the text labels for buttons */
+.js-button-group b {
+  display: none;
+}
+
+/* Base style for all buttons */
+.js-btn {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  min-width: 40px;
+  /* Ensure buttons have a consistent width */
+  text-align: center;
+}
+
+/* Hover effect for all buttons */
+.js-btn:hover {
+  background-color: #4e2774;
+  border-color: #7a3fc4;
+}
+
+/* Day Mode Styles */
+#content.day-mode .js-btn {
+  background-color: #e9e9e9;
+  color: #333;
+  border-color: #ccc;
+}
+
+#content.day-mode .js-btn:hover {
+  background-color: #d1c4e9;
+  /* Light purple for hover in day mode */
+  border-color: #b39ddb;
+}

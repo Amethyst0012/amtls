@@ -1,76 +1,142 @@
-/* this css for header, home, default and footer */
-
-
+/* =================================
+   HEADER
+================================= */
 .site-header {
   border-top: 5px solid $border-color-03;
   border-bottom: 1px solid $border-color-01;
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
   background-color: #4e2774;
-
-  // Positioning context for the mobile navigation icon
   position: relative;
 }
 
-.home {
-  background-color: #121212;
+.header-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
 }
 
-.page-content {
-  background-color: #121212;
-  color: white;
+/* Responsive for mobile header */
+@media (max-width: 768px) {
+  .header-wrapper {
+    padding: 0 15px;
+  }
 }
 
+/* =================================
+   GLOBAL LAYOUT & BACKGROUNDS
+================================= */
+
+.home,
+.page-content,
 .site-footer {
   background-color: #121212;
 }
 
-.night-mode {
-	background-color: #272727;
-	color: white;
-}
+/* =================================
+   INDEX PAGE (.home)
+================================= */
 
-.night-mode-quotes {
-	color: white;
-}
-
-.day-mode {
-	background-color: #ffffff;
-	color: #1b1b1b;
-}
-
-.day-mode-quotes {
-	color: #8095fb;
-}
-
-h1, h2 {
-	color: white;
+.page-heading {
   text-align: center;
+  color: white !important;
+  margin-bottom: 20px;
+  font-weight: bold !important;
 }
 
-h3, h4, h5, h6 {
+/* =================================
+   MAIN CONTENT AREA (.wrapper)
+================================= */
+
+/* Default styles for the content area */
+#content {
+  padding: 20px;
+  border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Night Mode Styles */
+#content.night-mode {
+  background-color: #272727;
   color: white;
 }
 
-a:link {
+/* Day Mode Styles */
+#content.day-mode {
+  background-color: #ffffff;
+  color: #1b1b1b;
+}
+
+#content .night-mode-quotes {
+  color: white;
+}
+
+#content.day-mode .day-mode-quotes,
+#content.day-mode .night-mode-quotes {
+  color: #8095fb;
+}
+
+/* Scope headings to content area only */
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+  color: inherit;
+  text-align: center;
+}
+
+/* Scope links to content area only */
+#content a:link {
   color: #9966cc;
 }
-a:visited {
+
+#content a:visited {
   color: darkgray;
 }
-a:hover {
+
+#content a:hover {
   color: rgb(107, 78, 134);
 }
-a:active {
-  color: #9C84A2;
-} 
 
+#content a:active {
+  color: #9C84A2;
+}
+
+#content.day-mode a:link,
+#content.day-mode a:visited {
+  color: #4e2774;
+}
+
+#content.day-mode a:hover,
+#content.day-mode a:active {
+  color: #7a3fc4;
+}
+
+.post-title {
+  text-align: center;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.ameth {
+  color: white !important;
+}
+
+#content.day-mode .ameth {
+  color: black !important;
+}
+
+/* =================================
+   COMPONENTS
+================================= */
+/* Table of Contents */
 ul.toc {
   list-style: none;
   padding-left: 0;
 	margin-left: 0;
 }
-
+/* Navbar */
 .navbar {
   overflow: hidden;
   background-color: white;
@@ -87,37 +153,11 @@ blockquote {
   > :last-child {
     margin-bottom: 0;
   }
-
-/*
-
-.footnote{
-	color: bla;
 }
 
-*/
-
-
-/* Sup text */
-p input + label {
-  font: 0.7em / 1 system-ui, sans-serif;
-  vertical-align: super;
-  cursor: pointer;
-  transition: color 0.1s;
-}
-
-p input + label:before {
-  content: "";
-}
-
-p input + label:after {
-  content: "";
-}
-
-p input + label:hover {
-  color: #838374;
-}
-
-/* Footnote text */
+/* =================================
+   INLINE FOOTNOTES / SUPERSCRIPT
+================================= */
 
 small {
   color: #838374;
@@ -135,4 +175,34 @@ p input:checked + label + small {
   position: relative;
   opacity: 1;
   visibility: visible;
+}
+
+p input+label {
+  font: 0.7em / 1 system-ui, sans-serif;
+  vertical-align: super;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+p input+label:before {
+  content: "";
+}
+
+p input+label:after {
+  content: "";
+}
+
+p input+label:hover {
+  color: #838374;
+}
+
+/* =================================
+   FOOTER
+================================= */
+.footer-col-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
 }

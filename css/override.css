@@ -1,30 +1,25 @@
+/* =================================
+   GENERAL & HR
+================================= */
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
+/* =================================
+   POST NAVIGATION (PREV/NEXT)
+================================= */
 
-/* Post content */
-
-.ameth {
-  color: white;
-}
-
-
-
-/* Post navigation links */
+/* --- Main Container --- */
 .post_navi {
   display: flex;
+  color: white !important;
 }
 
-.post_navi-label {
-  font-size: 0.8em;
-  opacity: 0.5;
-}
-
+/* --- Navigation Items (Links) --- */
 .post_navi .post_navi-item {
-  padding: 0 2.2em;
   width: 50%;
+  padding: 0 2.2em;
   position: relative;
   color: inherit !important;
 }
@@ -37,12 +32,10 @@ hr {
   text-align: right;
 }
 
-.post_navi .nav_prev .post_navi-arrow {
-  left: 0;
-}
-
-.post_navi .nav_next .post_navi-arrow {
-  right: 0;
+/* --- Inner Labels & Arrows --- */
+.post_navi-label {
+  font-size: 0.8em;
+  opacity: 0.5;
 }
 
 .post_navi .post_navi-arrow {
@@ -53,17 +46,168 @@ hr {
   opacity: 0.3;
 }
 
-.centersel {
-    text-align: center;
-    /*These options are for the div to be visible in the example, the important is the first*/
-    width: auto;
-    height: 50px;
+.post_navi .nav_prev .post_navi-arrow {
+  left: 0;
 }
 
-.cmb {
-    display: block;
-	margin: 0 auto;
+.post_navi .nav_next .post_navi-arrow {
+  right: 0;
 }
+
+/* =================================
+   CHAPTER SELECTOR (DROPDOWN)
+================================= */
+
+/* --- Dropdown Container --- */
+.centersel {
+  text-align: center;
+  width: auto;
+  height: 50px;
+  /* Provides vertical spacing */
+}
+
+/* --- Styling Wrapper --- */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- Custom Arrow --- */
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.8em;
+  color: #e0e0e0;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Rotate arrow when open */
+.select-wrapper.is-open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* --- The NEW Custom <select> --- */
+.custom-select {
+  position: relative;
+  width: 350px;
+}
+
+.custom-select-trigger {
+  background-color: #3a3a3a;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 6px 40px 6px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-trigger:hover {
+  background-color: #4a4a4a;
+  border-color: #777;
+}
+
+.custom-options {
+  display: none;
+  /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #272727;
+  border: 1px solid #555;
+  border-radius: 6px;
+  margin-top: 5px;
+  z-index: 100;
+  max-height: 300px;
+  /* Limits the visible height */
+  overflow-y: auto;
+  /* Add padding to the container for the search box */
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* --- Custom Scrollbar --- */
+.custom-options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-options::-webkit-scrollbar-track {
+  background: #272727;
+  border-radius: 4px;
+}
+
+.custom-options::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.custom-options::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+
+.custom-select.is-open .custom-options {
+  display: block;
+  /* Show on open */
+}
+
+.custom-select-search {
+  width: 100%;
+  box-sizing: border-box;
+  /* Include padding in the width */
+  padding: 10px;
+  margin-bottom: 8px;
+  /* Space between search and options */
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+}
+
+.custom-select-search:focus {
+  outline: none;
+  background-color: #444;
+  border-color: #777;
+}
+
+.custom-option {
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-option:hover {
+  background-color: #4e2774;
+}
+
+.custom-option.is-selected {
+  background-color: #402060;
+  font-weight: bold;
+}
+
+/* --- The ORIGINAL <select> Element --- */
+.cmb {
+  /* This is now hidden by JS, but we keep it for non-JS users */
+  display: block;
+}
+
+/* =================================
+   RESPONSIVE STYLES
+================================= */
 
 /* ✅ Tablet (769px – 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -83,33 +227,49 @@ hr {
 
 /* ✅ Mobile (up to 768px) */
 @media (max-width: 768px) {
+
+  /* --- Post Navigation on Mobile --- */
   .post_navi {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
-    gap: 12px;
+    gap: 20px;
   }
 
   .post_navi .post_navi-item {
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 10px;
     font-size: 0.9em;
+    border: 1px solid #444;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
   }
 
+  /* Hide arrows on mobile for a cleaner look */
   .post_navi .post_navi-arrow {
-    position: static;
-    transform: none;
-    font-size: 1.8em;
-    opacity: 0.4;
-    margin-top: 5px;
+    display: none;
   }
 
+  /* --- Chapter Selector on Mobile --- */
   .centersel {
     height: auto;
-    padding: 8px 0;
+    padding: 15px 0;
+    width: 100%;
+    text-align: left;
+    /* Remove center alignment */
   }
 
-  .cmb {
-    width: 90%;
+  /* Make the wrapper a block to allow full width */
+  .select-wrapper {
+    display: block;
+  }
+
+  /* Make the new custom dropdown responsive and full-width */
+  .custom-select {
+    width: 100%;
   }
 }

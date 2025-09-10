@@ -21,14 +21,16 @@
 {% endfor %}
 
 <div class="centersel">
-<select class="cmb"  onchange="location = this.value;" style="width: 350px">
-	{% for post in site.posts reversed %}	
-		{% if post.tags contains 'lhahs' %}
-			<option value="{{ post.url | relative_url }}">{{post.title}}</option>
-		{% endif %}				
-	{% endfor %}
-</select> 
-<p><br /></p>
+	<div class="select-wrapper">
+		<select class="cmb" onchange="location = this.value;">
+			{% for post in site.posts reversed %}
+			{% if post.tags contains 'lhahs' %}
+			<option value="{{ post.url | absolute_url }}">{{post.title}}</option>
+			{% endif %}
+			{% endfor %}
+		</select>
+	</div>
+	<p><br /></p>
 </div>
 
 <div class="post_navi" style="font-size: 16px;">
